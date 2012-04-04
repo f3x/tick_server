@@ -1,0 +1,9 @@
+%% -*- erlang -*-
+{application, tick_server,
+ [{description, "tick_server"},
+  {vsn, "0.1"},
+  {modules, []},
+  {registered, []},
+  {mod, {'tick_server_app', []}},
+  {env, []},
+  {applications, [kernel, stdlib, crypto]}]}.

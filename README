@@ -1,0 +1,31 @@
+Tick-server is an Mochiweb based web server for epolling (streaming, long pooling, web sockets) 
+testing purposes.
+
+It starts send time ticks (unix epoch) 1 per sec, to any open connection 
+as chunked HTTP/1.1 responses.
+
+Using:
+
+curl -v -s http://localhost:8383/tick/
+
+> GET /tick/ HTTP/1.1
+> User-Agent: curl/7.21.6 (x86_64-pc-linux-gnu) libcurl/7.21.6 OpenSSL/1.0.0e zlib/1.2.3.4 libidn/1.22 librtmp/2.3
+> Host: localhost:8383
+> Accept: */*
+> 
+< HTTP/1.1 200 OK
+< Transfer-Encoding: chunked
+< Server: Tick server
+< Date: Wed, 04 Apr 2012 09:43:29 GMT
+< Content-Type: text/html; charset=utf-8
+< 
+Tick server v.0.1 for 
+1333532610 1
+1333532611 2
+1333532612 3
+1333532613 4
+.....
+....
+
+
+or try it with your client or browser with long polling support (Firefox, Chrome).
